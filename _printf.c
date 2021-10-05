@@ -26,18 +26,18 @@ int _printf(const char *format, ...)
 		cval = va_arg(ap, char *);
 		_putchar(*cval);
 		break;
-            case 'd':
-            ival = va_arg(ap, int);
-            _putint(ival );
-            break;
-            case 'f':
-            dval = va_arg(ap, double);
-            _putint(dval);
-            break;
-            case 's':
-            for (sval = va_arg(ap, char *); *sval; sval++)
-                _putchar(*sval);
-            break;
+	case 'd':
+		ival = va_arg(ap, int);
+		_putint(ival );
+		break;
+	case 'f':
+		dval = va_arg(ap, double);
+		_putint(dval);
+		break;
+	case 's':
+		for (sval = va_arg(ap, char *); *sval; sval++)
+			_putchar(*sval);
+		break;
         }
     }
     va_end(ap);

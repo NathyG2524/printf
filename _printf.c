@@ -6,6 +6,7 @@ int _printf(const char *format, ...)
 {
     va_list ap;
     const char *p;
+    char *cval;
     char *sval;
     int ival;
     double dval;
@@ -21,6 +22,10 @@ int _printf(const char *format, ...)
         }
         switch (*++p)
         {
+	case 'c':
+		cval = va_arg(ap, char *);
+		_putchar(*cval);
+		break;
             case 'd':
             ival = va_arg(ap, int);
             _putint(ival );
